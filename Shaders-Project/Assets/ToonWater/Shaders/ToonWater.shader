@@ -11,6 +11,7 @@
 
         _FoamMaxDistance("Foam Maximum Distance", Range(0, 1)) = 0.4
         _FoamMinDistance("Foam Minimum Distance", Range(0, 1)) = 0.04
+        _FoamColor("Foam Color", Color) = (1,1,1,1)
 
         _SurfaceNoiseScroll("Surface Noise Scroll Amount", Vector) = (0.03, 0.03, 0, 0)
 
@@ -21,13 +22,29 @@
     }
     SubShader
     {
+        Tags
+        {
+            "Queue" = "Transparent"
+        }
+
         Pass
         {
+            Blend SrcAlpha OneMinusSrcAlpha
+            ZWrite Off
+
 			CGPROGRAM
             #pragma vertex vert
             #pragma fragment frag
 
             #include "UnityCG.cginc"
+
+            float4 alphaBlend(float4 top, float4 bottom)
+            {
+	            float3 color = (top.rgb * top.a) + (bottom.rgb * (1 - top.a));
+                float alpha = top.a + bottom.a * (1 - top.a);
+
+	            return float4(color, alpha);
+            }
 
             struct appdata
             {
@@ -52,8 +69,8 @@
 
             sampler2D _SurfaceDistortion;
             float4 _SurfaceDistortion_ST;
-
             float _SurfaceDistortionAmount;
+
 
             v2f vert (appdata v)
             {
@@ -75,6 +92,7 @@
             sampler2D _CameraNormalsTexture;
             float _FoamMaxDistance;
             float _FoamMinDistance;
+            float4 _FoamColor;
 
 
             float4 frag (v2f i) : SV_Target
@@ -99,8 +117,11 @@
                 float surfaceNoiseCutoff = foamDepthDifference01 * _SurfaceNoiseCutoff;
 
                 float surfaceNoise = surfaceNoiseSample > surfaceNoiseCutoff ? 1 : 0;
+                float4 foamColor = _FoamColor * surfaceNoise;
+                float4 surfaceNoiseColor = _FoamColor;
+                surfaceNoiseColor.a = surfaceNoise;
 
-                return waterColor + surfaceNoise;
+                return alphaBlend(surfaceNoiseColor, waterColor);
             }
             ENDCG
         }
