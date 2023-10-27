@@ -110,7 +110,6 @@
                 float3 existingNormal = tex2Dproj(_CameraNormalsTexture, UNITY_PROJ_COORD(i.screenPosition));
                 float3 normalDot = saturate(dot(existingNormal, i.viewNormal));
 
-
                 float existingDepth01 = tex2Dproj(_CameraDepthTexture, UNITY_PROJ_COORD(i.screenPosition)).r;
                 float existingDepthLinear = LinearEyeDepth(existingDepth01);
 
