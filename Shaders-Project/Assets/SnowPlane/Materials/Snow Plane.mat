@@ -77,7 +77,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _HeightAmount: 0.4
+    - _HeightAmount: 0.45
     - _Metallic: 0
     - _Mode: 0
     - _NoiseAmount: 0.45
@@ -87,11 +87,11 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _TesselationAmount: 5
+    - _TesselationAmount: 10.6
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _BottomColor: {r: 0.6046992, g: 0.6610116, b: 0.7169812, a: 1}
+    - _BottomColor: {r: 0.5551442, g: 0.6053247, b: 0.6509434, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

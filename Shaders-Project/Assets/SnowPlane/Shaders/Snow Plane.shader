@@ -15,7 +15,7 @@ Shader "Snow/Snow Plane"
         _NoiseTex("Noise Texture", 2D) = "white" {}
         _NoiseWeight("Noise Weight", Range(0, 1)) = 0.3 
 
-        _TesselationAmount("Tesselation Amount", float) = 1
+        _TesselationAmount("Tesselation Amount", Range(0, 32)) = 1
     }
     SubShader
     { 
