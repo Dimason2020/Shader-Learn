@@ -5,6 +5,7 @@ Shader "Snow/Snow Plane"
         _Color ("Color", Color) = (1,1,1,1)
         _BottomColor ("Bottom Color", Color) = (1,1,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
+        _NormalMap ("Normal Map", 2D) = "white" {}
 
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
@@ -21,13 +22,14 @@ Shader "Snow/Snow Plane"
 
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Standard fullforwardshadows addshadow vertex:vert tessellate:tess
+        #pragma surface surf Standard fullforwardshadows addshadow vertex:vert tessellate:tess nolightmap
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 4.6
 
         sampler2D _MainTex;
         sampler2D _HeightMap;
+        sampler2D _NormalMap;
 
         struct Input
         {
@@ -66,6 +68,7 @@ Shader "Snow/Snow Plane"
 
             fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * lerp(_BottomColor, _Color, height);
             o.Albedo = c.rgb;
+            o.Normal = tex2D(_NormalMap, IN.uv_MainTex);
             // Metallic and smoothness come from slider variables
             o.Metallic = _Metallic;
             o.Smoothness = _Glossiness;
