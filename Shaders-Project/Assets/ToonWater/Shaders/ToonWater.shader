@@ -83,7 +83,7 @@
                 v2f o;
 
                 float3 p = v.vertex.xyz;
-                p.y = _WavesAmplitude * sin((p.x * _WavesFrequency * 3.14 + _Time.y));
+                p.y = _WavesAmplitude * sin((p.x * _WavesFrequency + _Time.y));
                 v.vertex.xyz = p;
 
                 o.vertex = UnityObjectToClipPos(v.vertex);
