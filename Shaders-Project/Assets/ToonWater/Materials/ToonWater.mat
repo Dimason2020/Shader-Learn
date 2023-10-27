@@ -93,6 +93,8 @@ Material:
     - _SurfaceDistortionAmount: 0.457
     - _SurfaceNoiseCutoff: 0.75
     - _UVSec: 0
+    - _WavesAmplitude: 0.01
+    - _WavesFrequency: 0.01
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

@@ -19,6 +19,9 @@
         _SurfaceDistortion("Surface Distortion", 2D) = "white" {}	
         // Control to multiply the strength of the distortion.
         _SurfaceDistortionAmount("Surface Distortion Amount", Range(0, 1)) = 0.27
+
+        _WavesAmplitude("WavesAmplitude", float) = 1.0
+        _WavesFrequency("WavesFrequency", float) = 1.0
     }
     SubShader
     {
@@ -72,10 +75,16 @@
             float4 _SurfaceDistortion_ST;
             float _SurfaceDistortionAmount;
 
+            float _WavesAmplitude;
+            float _WavesFrequency;
 
             v2f vert (appdata v)
             {
                 v2f o;
+
+                float3 p = v.vertex.xyz;
+                p.y = _WavesAmplitude * sin((p.x * _WavesFrequency * 3.14 + _Time.y));
+                v.vertex.xyz = p;
 
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.screenPosition = ComputeScreenPos(o.vertex);
