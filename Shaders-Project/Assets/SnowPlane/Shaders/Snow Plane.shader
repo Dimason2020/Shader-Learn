@@ -13,7 +13,7 @@ Shader "Snow/Snow Plane"
         _HeightAmount("Height Amount", float) = 0.5
 
         _NoiseTex("Noise Texture", 2D) = "white" {}
-        _NoiseAmount("Noise Amount", float) = 1
+        _NoiseWeight("Noise Weight", Range(0, 1)) = 0.3 
 
         _TesselationAmount("Tesselation Amount", float) = 1
     }
@@ -44,7 +44,7 @@ Shader "Snow/Snow Plane"
         fixed4 _Color;
         fixed4 _BottomColor;
         float _HeightAmount;
-        float _NoiseAmount;
+        float _NoiseWeight;
         float _TesselationAmount;
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
@@ -63,7 +63,7 @@ Shader "Snow/Snow Plane"
         {
             float offset = tex2Dlod(_HeightMap, float4(v.texcoord.xy, 0, 0)).x * _HeightAmount;
             float noise = tex2Dlod(_NoiseTex, float4(v.texcoord.xy, 0, 0)).r;
-            offset += noise * _NoiseAmount;
+            offset += noise * _NoiseWeight;
             v.vertex.y += offset;
         }
 
