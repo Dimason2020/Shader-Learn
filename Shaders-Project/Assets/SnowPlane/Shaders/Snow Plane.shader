@@ -6,12 +6,14 @@ Shader "Snow/Snow Plane"
         _BottomColor ("Bottom Color", Color) = (1,1,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
         _NormalMap ("Normal Map", 2D) = "white" {}
-
         _Glossiness ("Smoothness", Range(0,1)) = 0.5
         _Metallic ("Metallic", Range(0,1)) = 0.0
 
         _HeightMap ("Height Map", 2D) = "white" {}
         _HeightAmount("Height Amount", float) = 0.5
+
+        _NoiseTex("Noise Texture", 2D) = "white" {}
+        _NoiseAmount("Noise Amount", float) = 1
 
         _TesselationAmount("Tesselation Amount", float) = 1
     }
@@ -29,6 +31,7 @@ Shader "Snow/Snow Plane"
 
         sampler2D _MainTex;
         sampler2D _HeightMap;
+        sampler2D _NoiseTex;
         sampler2D _NormalMap;
 
         struct Input
@@ -41,6 +44,7 @@ Shader "Snow/Snow Plane"
         fixed4 _Color;
         fixed4 _BottomColor;
         float _HeightAmount;
+        float _NoiseAmount;
         float _TesselationAmount;
 
         // Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
@@ -58,6 +62,8 @@ Shader "Snow/Snow Plane"
         void vert(inout appdata_full v)
         {
             float offset = tex2Dlod(_HeightMap, float4(v.texcoord.xy, 0, 0)).x * _HeightAmount;
+            float noise = tex2Dlod(_NoiseTex, float4(v.texcoord.xy, 0, 0)).r;
+            offset += noise * _NoiseAmount;
             v.vertex.y += offset;
         }
 
