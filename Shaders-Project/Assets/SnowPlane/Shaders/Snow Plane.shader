@@ -21,7 +21,7 @@ Shader "Snow/Snow Plane"
 
         CGPROGRAM
         // Physically based Standard lighting model, and enable shadows on all light types
-        #pragma surface surf Standard fullforwardshadows vertex:vert tessellate:tess
+        #pragma surface surf Standard fullforwardshadows addshadow vertex:vert tessellate:tess
 
         // Use shader model 3.0 target, to get nicer looking lighting
         #pragma target 4.6
