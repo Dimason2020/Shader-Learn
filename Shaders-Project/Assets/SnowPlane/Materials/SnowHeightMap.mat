@@ -19,9 +19,13 @@ Material:
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _DrawBrush:
+        m_Texture: {fileID: 2800000, guid: 3b1c8f0a2da5bad41accd72784729ecb, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats: []
     m_Colors:
-    - _DrawPosition: {r: 0.0010203797, g: 0.03684445, b: 0, a: 0}
+    - _DrawPosition: {r: 0.58868325, g: 0.19445731, b: 0, a: 0}
   m_BuildTextureStacks: []

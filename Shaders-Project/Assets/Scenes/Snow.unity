@@ -333,6 +333,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   renderTexture: {fileID: 8600000, guid: a5b080cdae9307848a8d4b14b9698920, type: 2}
   drawMaterial: {fileID: 2100000, guid: 055f61bc75f22ce4bb3f5185a7c66caa, type: 2}
+  tires:
+  - {fileID: 8392590568846835495}
+  - {fileID: 1411905131}
+  - {fileID: 1556538514}
+  - {fileID: 958143055}
 --- !u!1 &950418313
 GameObject:
   m_ObjectHideFlags: 0
@@ -4868,7 +4873,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6513426074857423733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.610651, y: 0.013352215, z: -5.975404}
+  m_LocalPosition: {x: 2.610651, y: 0.01335222, z: -8.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5398,6 +5403,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5850041973038422479}
+  - component: {fileID: 6513426074857423734}
   m_Layer: 0
   m_Name: PickUp
   m_TagString: Untagged
@@ -5405,6 +5411,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!95 &6513426074857423734
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6513426074857423733}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bc966dad6b286904c8b2653db05fcb22, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &6596257534677384343
 Transform:
   m_ObjectHideFlags: 0
