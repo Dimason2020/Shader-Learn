@@ -68,6 +68,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: e182ac5d3b797044fb29f3fa2acc3708, type: 3}
         m_Scale: {x: 1, y: 5}
         m_Offset: {x: 0, y: 0}
+    - _WavesNoise:
+        m_Texture: {fileID: 2800000, guid: e182ac5d3b797044fb29f3fa2acc3708, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BumpScale: 1
@@ -83,6 +87,7 @@ Material:
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
+    - _NoiseWeight: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
     - _ShorelineMaxDistance: 0.4
@@ -92,6 +97,7 @@ Material:
     - _SrcBlend: 1
     - _SurfaceDistortionAmount: 0.457
     - _SurfaceNoiseCutoff: 0.75
+    - _TessellationAmount: 1
     - _UVSec: 0
     - _WavesAmplitude: 0.01
     - _WavesFrequency: 0.01
