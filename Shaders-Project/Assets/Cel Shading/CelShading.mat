@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SnowHeightMap
-  m_Shader: {fileID: 4800000, guid: c862635229084ec4cb4b7382f7c7f581, type: 3}
+  m_Name: CelShading
+  m_Shader: {fileID: 4800000, guid: e6d14a938c684de429060a9fcc1ee386, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -20,12 +20,20 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _DrawBrush:
-        m_Texture: {fileID: 2800000, guid: 3b1c8f0a2da5bad41accd72784729ecb, type: 3}
+    - _MainTex:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats: []
+    m_Floats:
+    - _Glossiness: 32
+    - _Multiplier: 0
+    - _Range: 1
+    - _RimThreshold: 0
+    - _Smoothness: 1.7
     m_Colors:
-    - _DrawPosition: {r: 0.06973214, g: 0.9988054, b: 0, a: 0}
+    - _BackColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _FrontColor: {r: 0, g: 0.7843137, b: 1, a: 1}
+    - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
   m_BuildTextureStacks: []

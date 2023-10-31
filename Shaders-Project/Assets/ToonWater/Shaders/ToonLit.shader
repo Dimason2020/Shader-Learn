@@ -4,6 +4,7 @@
     {
 		_Color("Color", Color) = (1,1,1,1)
         _MainTex ("Texture", 2D) = "white" {}
+        _Range("Range", Range(0, 10)) = 3
     }
     SubShader
     {
@@ -40,6 +41,7 @@
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
+            float _Range;
 
             v2f vert (appdata v)
             {
@@ -55,7 +57,7 @@
             float4 frag (v2f i) : SV_Target
             {
 				float NdotL = dot(i.worldNormal, _WorldSpaceLightPos0);
-				float light = saturate(floor(NdotL * 3) / (2 - 0.5)) * _LightColor0;
+				float light = saturate(floor(NdotL * _Range) / ((_Range -1 ) - 0.5)) * _LightColor0;
 
                 float4 col = tex2D(_MainTex, i.uv);
                 return (col * _Color) * (light + unity_AmbientSky);

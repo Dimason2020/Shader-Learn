@@ -1,4 +1,4 @@
-Shader "Snow/Snow Height Map"
+Shader "Learn/Snow/Snow Height Map"
 {
     Properties
     {

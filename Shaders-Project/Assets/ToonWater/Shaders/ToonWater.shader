@@ -1,4 +1,4 @@
-﻿Shader "Roystan/Toon/Water"
+﻿Shader "Learn/Toon/Water"
 {
     Properties
     {	
@@ -83,7 +83,7 @@
                 v2f o;
 
                 float3 p = v.vertex.xyz;
-                p.y = _WavesAmplitude * sin((p.x * _WavesFrequency + _Time.y));
+                p.y = _WavesAmplitude * (cos((p.x * _WavesFrequency + _Time.y * 3.14)) + sin((p.x * _WavesFrequency + _Time.y * 3.14)));
                 v.vertex.xyz = p;
 
                 o.vertex = UnityObjectToClipPos(v.vertex);
