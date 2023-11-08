@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,74 +7,131 @@ using UnityEngine;
 [RequireComponent(typeof(MeshRenderer), typeof(MeshFilter))]
 public class MarchingCubesMeshGenerator : MonoBehaviour
 {
-    private MeshRenderer meshRenderer;
     private MeshFilter meshFilter;
     private Mesh mesh;
 
     [SerializeField] private InteractableVertice verticePrefab;
-    [SerializeField] private List<InteractableVertice> interactableVertices;
+    [SerializeField] private InteractableVertice[] currentBox;
+    [SerializeField] private InteractableVertice[,,] interactableVertices;
     [SerializeField] private List<Vector3> verticies = new List<Vector3>();
+    [SerializeField] private List<int> triangles = new List<int>();
     [SerializeField] private int triangulationNumber;
-    private List<int> triangles = new List<int>();
     [SerializeField] private int gridSize;
 
     private void Start()
     {
-        meshRenderer = GetComponent<MeshRenderer>();
         meshFilter = GetComponent<MeshFilter>();
         mesh = new Mesh();
 
-        ClearMesh();
         GenerateInteractableVerticies();
     }
 
     private void GenerateInteractableVerticies()
     {
-        for (int i = 0; i < TriangleFinder.CubeVertices.Length; i++)
+        currentBox = new InteractableVertice[8];
+
+        interactableVertices = new InteractableVertice[gridSize, gridSize, gridSize];
+
+        for (int x = 0; x < gridSize; x++)
         {
-            InteractableVertice vertice = Instantiate(verticePrefab, transform.position 
-                + TriangleFinder.CubeVertices[i],
+            for (int y = 0; y < gridSize; y++)
+            {
+                for (int z = 0; z < gridSize; z++)
+                {
+                    Vector3 position = new Vector3(x, y, z) + transform.position * 0.5f;
+
+                    interactableVertices[x, y, z] = Instantiate(verticePrefab, position,
                 Quaternion.identity, transform);
-            vertice.Initialize(this, i);
-            interactableVertices.Add(vertice);
+                    interactableVertices[x, y, z].Initialize(this);
+                }
+            }
         }
+
+
+        StartCoroutine(MarchRoutine());
     }
 
-    public void CalculateTriangulationNumber(bool adding, int value)
+    private IEnumerator MarchRoutine()
     {
-        if (adding)
-            triangulationNumber += value;
-        else
-            triangulationNumber -= value;
+        WaitForSeconds delay = new WaitForSeconds(0.01f);
 
-        UpdateMesh();
+        for (int z = 0; z < gridSize - 1; z++)
+        {
+            for (int y = 0; y < gridSize - 1; y++)
+            {
+                for (int x = 0; x < gridSize - 1; x++)
+                {
+                    currentBox = GetInteractableVertice(x, y, z);
+                    UpdateMesh(GetTriNumber());
+
+                    yield return delay;
+                }
+            }
+        }
+
+        RecalculateMesh();
     }
 
-
-    private void UpdateMesh()
+    private InteractableVertice[] GetInteractableVertice(int x, int y, int z)
     {
-        int[] triangulation = TriangleFinder.GetTriangles(triangulationNumber);
+        return new[] {
+        interactableVertices[x, y, z+1],
+        interactableVertices[x+1, y, z+1],
+        interactableVertices[x+1, y, z],
+        interactableVertices[x, y, z],
+        interactableVertices[x, y+1, z+1],
+        interactableVertices[x+1, y+1, z+1],
+        interactableVertices[x+1, y+1, z],
+        interactableVertices[x, y+1, z],
+      };
+    }
+    private int GetTriNumber()
+    {
+        int number = 0;
 
-        ClearMesh();
+        for (int i = 0; i < currentBox.Length; i++)
+        {
+            if (currentBox[i].IsActive == true)
+            {
+                switch (i)
+                {
+                    case 0: number += 1; break;
+                    case 1: number += 2; break;
+                    case 2: number += 4; break;
+                    case 3: number += 8; break;
+                    case 4: number += 16; break;
+                    case 5: number += 32; break;
+                    case 6: number += 64; break;
+                    case 7: number += 128; break;
+                }
+            }
+
+        }
+
+        return number;
+    }
+
+    private void UpdateMesh(int number)
+    {
+        int[] triangulation = TriangleFinder.GetTriangles(number);
 
         foreach (var edgeIndex in triangulation)
         {
             int indexA = TriangleFinder.EdgeConnections[edgeIndex][0];
             int indexB = TriangleFinder.EdgeConnections[edgeIndex][1];
 
-            Vector3 vertexPosition = (TriangleFinder.CubeVertices[indexA]
-                + TriangleFinder.CubeVertices[indexB]) / 2;
+            Vector3 vertexPosition = (currentBox[indexA].transform.position
+                + currentBox[indexB].transform.position) / 2;
 
             verticies.Add(vertexPosition);
-        }
-
-        for (int i = 0; i < verticies.Count; i += 3)
-        {
             AddTriangle();
         }
-        
-        mesh.vertices = verticies.ToArray();
-        mesh.triangles = triangles.ToArray();
+    }
+
+    private void RecalculateMesh()
+    {
+        mesh.SetVertices(verticies);
+        mesh.SetTriangles(triangles, 0);
         mesh.RecalculateNormals();
         meshFilter.mesh = mesh;
     }
@@ -82,41 +140,17 @@ public class MarchingCubesMeshGenerator : MonoBehaviour
     {
         int triangleIndex = triangles.Count;
         triangles.Add(triangleIndex);
-        triangles.Add(triangleIndex + 1);
-        triangles.Add(triangleIndex + 2);
-    }
-
-
-    private void ApplyToGrid(Action<int, int, int> action, int sizeOffset = 0)
-    {
-        for (int x = 0; x < gridSize + sizeOffset; x++)
-        {
-            for (int y = 0; y < gridSize + sizeOffset; y++)
-            {
-                for (int z = 0; z < gridSize + sizeOffset; z++)
-                {
-                    action?.Invoke(x, y, z);
-                }
-            }
-        }
-    }
-
-    private void ClearMesh()
-    {
-        verticies.Clear();
-        triangles.Clear();
-        mesh.Clear();
     }
 
     private void OnDrawGizmos()
     {
-        if (verticies == null)
+        if (currentBox == null)
             return;
 
-        for (int i = 0; i < verticies.Count; i++)
+        for (int i = 0; i < currentBox.Length; i++)
         {
-            Gizmos.color = Color.gray;
-            Gizmos.DrawSphere(verticies[i], 0.05f);
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(currentBox[i].transform.position, 0.15f);
         }
     }
 }

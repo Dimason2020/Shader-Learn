@@ -377,9 +377,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   verticePrefab: {fileID: 1624131811581980931, guid: 8fd1732b04ff50c40b0339e475abcc27, type: 3}
-  interactableVertices: []
+  currentBox: []
   verticies: []
+  triangles: 
   triangulationNumber: 0
+  gridSize: 5
 --- !u!4 &1851654546
 Transform:
   m_ObjectHideFlags: 0
