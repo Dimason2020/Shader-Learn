@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: NoiseVertexExample 1
+  m_Shader: {fileID: 4800000, guid: 36676ae7af246b24f907672efd87dc26, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _HeightMap:
+        m_Texture: {fileID: 2800000, guid: ec06328a9ad84ff4aa9764315b95f7a4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0.06000004, y: 0.20799999}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 17.32, y: 0.15239084}
+    m_Ints: []
+    m_Floats:
+    - _Height1: 0.1
+    - _Height2: 0.2
+    - _Height3: 0.35
+    - _Height4: 0.5
+    - _Height5: 0.75
+    - _MinSelfLighting: 0.152
+    - _MountainAmplitude: 0
+    m_Colors:
+    - _Color: {r: 0, g: 1, b: 0.559422, a: 1}
+    - _Color1: {r: 0.44705886, g: 0.98039216, b: 0.98039216, a: 1}
+    - _Color2: {r: 0.9409888, g: 0.990566, b: 0.45229617, a: 1}
+    - _Color3: {r: 0.23506583, g: 0.8773585, b: 0.36389282, a: 1}
+    - _Color4: {r: 0.17621928, g: 0.7075472, b: 0.24298465, a: 1}
+    - _Color5: {r: 0.6886792, g: 0.6886792, b: 0.6886792, a: 1}
+  m_BuildTextureStacks: []

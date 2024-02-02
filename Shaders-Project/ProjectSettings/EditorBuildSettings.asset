@@ -6,15 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Toon Water.unity
+    path: Assets/Tutors/Scenes/Toon Water.unity
     guid: f8d23ecabaa135f4cb12fb0061cca2f3
   - enabled: 1
-    path: Assets/Scenes/Snow.unity
+    path: Assets/Tutors/Scenes/Snow.unity
     guid: 446db33b2133c1848b6c9b2537ca6364
   - enabled: 1
-    path: Assets/Scenes/Cel Shading.unity
+    path: Assets/Tutors/Scenes/Cel Shading.unity
     guid: 665ef891f569f2f4e961034d5d556d89
   - enabled: 1
-    path: Assets/Scenes/Desmos Test.unity
+    path: Assets/Tutors/Scenes/Desmos Test.unity
     guid: 8fdcbf6731a63534685de2b9299b38ff
+  - enabled: 1
+    path: Assets/Tutors/Scenes/FreyLearn Scene.unity
+    guid: 6d43552ba1bbee34093bafed07038fec
   m_configObjects: {}

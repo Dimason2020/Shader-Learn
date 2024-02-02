@@ -1,0 +1,58 @@
+// Щоб створити мод скопіюйте цей файл, переіменуйте і вкажіть його імʼя у копії Universal шейдера у блоці CGINCLUDE
+//#shader_feature MY_KEYWORD
+//#multi_compile MY_KEYWORD_ON MY_KEYWORD_OFF
+
+#define MOD_VAR(t,n) UNITY_DEFINE_INSTANCED_PROP(t,n)
+// HERE YOU CAN DEFINE YOUR PROPERTIES
+#define MOD_INSTANCED_PROPS \
+MOD_VAR(float, _DickSize) \
+MOD_VAR(float, _BallsNumber)
+
+sampler2D _MyTex; // TEXTURES HERE
+
+// MODIFY OBJECT (MODEL) SPACE POSITION
+#define UNIVERSAL_MOD_OS_POS_INJECTION \
+v.vertex.xyz = v.vertex.xyz;
+
+// MODIFY WORLD SPACE POSITION
+#define UNIVERSAL_MOD_WS_POS_INJECTION \
+ws_pos = ws_pos; \
+//v.vertex = mul(unity_WorldToObject, float4(ws_pos, 1)); // UNCOMMENT
+
+// MODIFY VERTEX OBJECT SPACE NORMAL
+#define UNIVERSAL_MOD_VERTEX_OS_NORMAL_INJECTION \
+v.normal.xyz = v.normal.xyz;
+
+// MODIFY VERTEX WORLD SPACE NORMAL
+#define UNIVERSAL_MOD_VERTEX_WS_NORMAL_INJECTION \
+o.N = o.N;
+
+// CHANGE DEFAULT (DISABLED) GRADIENT
+#define UNIVERSAL_MOD_GRADIENT_INJECTION \
+data.tint = data.tint;
+
+// CHANGE DEFAULT (DISABLED) GRADIENT
+#define UNIVERSAL_MOD_ALBEDO_INJECTION \
+data.albedo = data.albedo;
+
+// MODIFY LIGHT
+#define UNIVERSAL_MOD_LIGHT_INJECTION \
+data.light = data.light;
+
+// MODIFY FINAL COLOR
+#define UNIVERSAL_MOD_FINAL_INJECTION \
+color = color;
+
+
+
+
+// DON'T TOUCH THIS
+#define UNIVERSAL_MOD_WS_POS_SHADOWCASTER_INJECTION \
+CALCULATE_WORLD_POSITION(ws_pos)\
+UNIVERSAL_MOD_WS_POS_INJECTION
+
+// NOT WORKING
+
+// MODIFY FRAGMENT WORLD SPACE NORMAL
+//#define UNIVERSAL_MOD_FRAGMENT_WS_NORMAL_INJECTION \
+//i.N = i.N;
