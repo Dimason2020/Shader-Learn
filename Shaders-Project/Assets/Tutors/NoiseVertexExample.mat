@@ -25,9 +25,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HeightMap:
-        m_Texture: {fileID: 2800000, guid: ec06328a9ad84ff4aa9764315b95f7a4, type: 3}
+        m_Texture: {fileID: 2800000, guid: e8ebcd8979f079a4d8546955448c3bd6, type: 3}
         m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
+        m_Offset: {x: 0, y: -0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -41,7 +41,7 @@ Material:
     - _Height5: 0.684
     - _Max: 1
     - _MinSelfLighting: 0.152
-    - _MountainAmplitude: 2
+    - _MountainAmplitude: 1.73
     m_Colors:
     - _Color: {r: 0, g: 1, b: 0.559422, a: 1}
     - _Color1: {r: 0.44705886, g: 0.98039216, b: 0.98039216, a: 1}

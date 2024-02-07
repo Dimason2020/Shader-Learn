@@ -78,7 +78,7 @@ Shader "Unlit/NoiseVertexExample"
                 o.vertex = UnityObjectToClipPos(v.vertex);
 
                 float heightMap = tex2Dlod(_HeightMap, float4(o.uv, 0, 0));
-                o.vertex.y -= (heightMap.x * _MountainAmplitude);
+                o.vertex.y += (heightMap.x * -_MountainAmplitude);
                 return o;
             }
 
@@ -112,9 +112,17 @@ Shader "Unlit/NoiseVertexExample"
             {
                 float4 color = tex2D(_HeightMap, i.uv);
 
-                float clampedValue = clamp(0.01, 0.95, color.g);
+                float2 uv = i.uv - 0.5;
+                float distance = length(uv);
+                //color -= float4(distance, distance,distance,1);
+
+                //return float4(distance, distance, distance, 1);
+
+                float clampedValue = clamp(0.1, 0.95, color.g);
+                float result = clampedValue > 0 ? clampedValue : 0.1;
                 float4 mapColor = tex2D(_ColorMap, clampedValue);
-                return saturate(mapColor);
+                //float4 mapColor = GetHeightColor(color);
+                return mapColor;
             }
             ENDCG
         }

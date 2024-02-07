@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UnlitReflectionShader 1
-  m_Shader: {fileID: 4800000, guid: fa9a1ef2015bfaa458442d8c012f8b26, type: 3}
+  m_Name: Hologram
+  m_Shader: {fileID: 4800000, guid: a1e2c7dbdb8868244997e0afcd44af9d, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -20,18 +20,13 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _Cube:
-        m_Texture: {fileID: 8900000, guid: 9b4e5ba903a4d3f4292b9aafcd9aec36, type: 3}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _MinSelfLight: 1
-    - _ReflectionStrength: 1
-    - _Smoothness: 64
-    m_Colors: []
+    - _RimPower: 1
+    m_Colors:
+    - _RimColor: {r: 0, g: 1, b: 1, a: 0}
   m_BuildTextureStacks: []

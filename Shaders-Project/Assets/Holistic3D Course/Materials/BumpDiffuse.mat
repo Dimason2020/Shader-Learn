@@ -24,13 +24,18 @@ Material:
         m_Texture: {fileID: 2800000, guid: 54440c4613ff5e440a9378500b20335c, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _CubeTex:
+        m_Texture: {fileID: 8900000, guid: 9b4e5ba903a4d3f4292b9aafcd9aec36, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: f06cb805894fcd44ea77edd766e372e8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BumpMultiply: 4.29
+    - _Brightness: 1
+    - _BumpMultiply: 1
     - _TextureBumpScale: 4
     m_Colors: []
   m_BuildTextureStacks: []
