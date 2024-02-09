@@ -28,7 +28,7 @@ Material:
     m_Floats:
     - _Glossiness: 0.5
     - _Metallic: 0
-    - _SComp: 3
+    - _SComp: 6
     - _SOp: 0
     - _SRef: 1
     m_Colors:

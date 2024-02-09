@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hologram
-  m_Shader: {fileID: 4800000, guid: a1e2c7dbdb8868244997e0afcd44af9d, type: 3}
+  m_Name: VFChallenge1
+  m_Shader: {fileID: 4800000, guid: fe9ced75e58a683468321a7d5d3d68bc, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -21,12 +21,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 7fa0077f6c88f7d44adc174e52e19263, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
-    m_Floats:
-    - _RimPower: 1
-    m_Colors:
-    - _RimColor: {r: 0, g: 1, b: 1, a: 1}
+    m_Floats: []
+    m_Colors: []
   m_BuildTextureStacks: []

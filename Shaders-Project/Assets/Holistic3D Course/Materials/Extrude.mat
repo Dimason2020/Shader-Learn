@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hologram
-  m_Shader: {fileID: 4800000, guid: a1e2c7dbdb8868244997e0afcd44af9d, type: 3}
+  m_Name: Extrude
+  m_Shader: {fileID: 4800000, guid: 1e83ac0de3d55ac42a9721214a3ab266, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -26,7 +26,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _RimPower: 1
-    m_Colors:
-    - _RimColor: {r: 0, g: 1, b: 1, a: 1}
+    - _Amount: 0.01
+    m_Colors: []
   m_BuildTextureStacks: []
