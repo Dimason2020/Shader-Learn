@@ -21,7 +21,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Cube:
-        m_Texture: {fileID: 8900000, guid: 97aa4925f965b054b94774589fa5aa28, type: 3}
+        m_Texture: {fileID: 8900000, guid: 9b4e5ba903a4d3f4292b9aafcd9aec36, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -31,7 +31,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Glossiness: 1
-    - _MinSelfLight: 5
+    - _MinSelfLight: 1
     - _Power: 1
     - _ReflectionLOD: 0
     - _ReflectionStrength: 1

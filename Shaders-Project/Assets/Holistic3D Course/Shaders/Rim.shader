@@ -11,7 +11,7 @@ Shader "Custom/Rim"
         _RimPower("Rim Power", Range(1, 10)) = 1
         _SliceThickness("Slice Thickness", Range(0, 1)) = 1
         _SliceAmount("Slice Amount", Range(0.25, 1)) = 1
-        _Select("Select", Int) = 1
+        [Toggle] _Select("Select", Float) = 0
     }
     SubShader
     {
@@ -45,9 +45,9 @@ Shader "Custom/Rim"
 
         void surf (Input IN, inout SurfaceOutput o)
         {
-            half rim = 1 - saturate(dot(normalize(IN.viewDir), o.Normal));
+            half rim = 1 - saturate(dot(normalize(IN.viewDir), o.Normal)); 
             float3 tex = tex2D(_MainTex, IN.uv_MainTex).rgb;
-            o.Emission = _Select <= 1 ? _RimColor.rgb * pow(rim,_RimPower) : _Select == 2 ? colorizing(IN.worldPos.y) : 0;
+            o.Emission = _Select == 0 ? _RimColor.rgb * pow(rim,_RimPower) : colorizing(IN.worldPos.y);
         }
         ENDCG
     }

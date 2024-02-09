@@ -12,7 +12,11 @@ Shader "Unlit/Toon"
     }
     SubShader
     {
-        Tags { "RenderType"="Opaque" }
+        Tags 
+        { 
+            "RenderType"="Opaque" 
+            "LightMode"="ForwardBase"
+        }
 
         Pass
         {
@@ -21,6 +25,7 @@ Shader "Unlit/Toon"
             #pragma fragment frag
 
             #include "UnityCG.cginc"
+            #include "UnityLightingCommon.cginc"
 
             struct appdata
             {
@@ -59,12 +64,12 @@ Shader "Unlit/Toon"
                 fixed4 col = float4(i.normal, 1);
 
                 float3 lightDirection = _WorldSpaceLightPos0.xyz;
-                float dotP = dot(i.normal, lightDirection);
+                float dotP = max(0, dot(i.normal, lightDirection));
                 float4 result;
                 Unity_Remap_float4(dotP, float2(_InMin, _InMax), float2(_OutMin,_OutMax), result);
                 float4 divide = result / float4(0.49, 0, 0, 0);
                 float4 flooring = floor(divide);
-                return result;
+                return result * _LightColor0;
             }
             ENDCG
         }
