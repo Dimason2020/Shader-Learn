@@ -26,7 +26,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BuildSize: 0.221
+    - _BuildSize: 1
     - _BuildSizeMultiplier: 0.2
     - _FoamWidth: 0.024
     - _RimPower: 1
