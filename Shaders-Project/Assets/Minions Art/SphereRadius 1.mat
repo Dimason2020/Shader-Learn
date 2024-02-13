@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SphereRadius 1
+  m_Shader: {fileID: 4800000, guid: 01b93b7e8656a9343b4ac8d28b2a52ff, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: ccbae51c789c51e4682f749aa91ce1ab, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: be6d21014d90c2c4cadebd1fd6f58024, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondTex:
+        m_Texture: {fileID: 2800000, guid: 12cde8a4716b7ba4198829c1cede3e17, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _LineWidth: 0.0073
+    - _NScale: 0.27
+    - _NSpeed: 7.76
+    - _NoiseCutoff: 0.0168
+    - _NoiseStrength: 0.31
+    - _Radius: 2.77
+    m_Colors:
+    - _Color: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
+    - _LineColor: {r: 1, g: 0.92067134, b: 0, a: 1}
+    - _Position: {r: 9.59, g: 0.55, b: -36.850002, a: 0}
+  m_BuildTextureStacks: []
