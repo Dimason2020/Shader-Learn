@@ -24,12 +24,18 @@ Material:
         m_Texture: {fileID: 2800000, guid: 792cf41bbbde02b4e92fbfba1b6c9445, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 4c7305f5b6ebf0448b13297757092b67, type: 3}
+        m_Scale: {x: 50, y: 50}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _BuildSize: 0.441
     - _BuildSizeMultiplier: 0.6
     - _FoamWidth: 0.04
+    - _NoiseCutoff: 0.15
     - _RimPower: 1
+    - _ShineMultiplier: 2.5
     m_Colors:
     - _FoamColor: {r: 0.68481666, g: 0.745283, b: 0.73743737, a: 0.8039216}
     - _RimColor: {r: 0, g: 1, b: 1, a: 0}

@@ -7,10 +7,11 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SphereRadius 1
+  m_Name: CubeRadius
   m_Shader: {fileID: 4800000, guid: 01b93b7e8656a9343b4ac8d28b2a52ff, type: 3}
   m_ValidKeywords: []
-  m_InvalidKeywords: []
+  m_InvalidKeywords:
+  - _MOVESECONDTEX_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -29,19 +30,20 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SecondTex:
-        m_Texture: {fileID: 2800000, guid: 12cde8a4716b7ba4198829c1cede3e17, type: 3}
+        m_Texture: {fileID: 2800000, guid: 36b88763521a03549b56d085b6f1e518, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _LineWidth: 0.0073
+    - _MoveSecondTex: 1
     - _NScale: 0.27
     - _NSpeed: 7.76
-    - _NoiseCutoff: 0.0168
+    - _NoiseCutoff: 0.014
     - _NoiseStrength: 0.31
-    - _Radius: 2.77
+    - _Radius: 2.61
     m_Colors:
     - _Color: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
     - _LineColor: {r: 1, g: 0.92067134, b: 0, a: 1}
-    - _Position: {r: 9.59, g: 0.55, b: -36.850002, a: 0}
+    - _Position: {r: 6.0299997, g: 1.81, b: -37.29, a: 0}
   m_BuildTextureStacks: []

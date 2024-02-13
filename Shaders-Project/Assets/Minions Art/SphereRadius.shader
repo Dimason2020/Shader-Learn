@@ -18,6 +18,8 @@ Shader "Custom/SphereRadius"
         _Radius("Radius", Range(0, 10)) = 1
 
         _Position("Position", Vector) = (1,1,1,1)
+
+        [Toggle] _MoveSecondTex("Move Second Texture", Float) = 0
     }
     SubShader
     {
@@ -49,7 +51,8 @@ Shader "Custom/SphereRadius"
         float _NSpeed;
         float _NoiseCutoff;
         float3 sphereNoise;
-
+        float _MoveSecondTex;
+         
         float RadiusNoise(float sphereR, float3 worldNormal, float3 worldPos)
         {
             float3 blendNormal = saturate(pow(worldNormal * 1.4, 4));
@@ -74,13 +77,13 @@ Shader "Custom/SphereRadius"
             float sphereR = 1 - saturate(dis / _Radius).r;
             
             float radiusCutoff = RadiusNoise(sphereR, IN.worldNormal, IN.worldPos);
-            fixed4 c = float4(radiusCutoff, radiusCutoff,radiusCutoff, 0) * _Color;
 
             float Line = step(sphereNoise - _LineWidth, _NoiseCutoff) * radiusCutoff;
             float3 coloredLine = Line * _LineColor;
 
             half4 c1 = tex2D(_MainTex, IN.uv_MainTex);
-            half4 c2 = tex2D(_SecondTex, IN.uv_SecondTex);
+            float2 uv = _MoveSecondTex >= 1 ? float2(IN.uv_SecondTex.x, IN.uv_SecondTex.y + _Time.x * 2) : IN.uv_SecondTex;
+            half4 c2 = tex2D(_SecondTex, uv);
             half4 combinedTex = lerp(c1, c2, radiusCutoff);
 
             o.Albedo = combinedTex + coloredLine;
