@@ -2,6 +2,7 @@ Shader "Custom/StencilObject"
 {
     Properties
     {
+        _MainTex("Main Tex", 2D) = "white" {}
         _Color("Color", Color) = (1,1,1,1)
 
         _SRef("Stencil Ref", Float) = 1
@@ -37,7 +38,8 @@ Shader "Custom/StencilObject"
 
         void surf (Input IN, inout SurfaceOutputStandard o)
         {
-            o.Albedo = _Color.rgb;
+            float3 color = tex2D(_MainTex, IN.uv_MainTex);
+            o.Albedo = color * _Color.rgb;
         }
         ENDCG
     }

@@ -22,7 +22,7 @@ Material:
     m_TexEnvs:
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 182a5f5d56040f3489e143cb041f2f10, type: 3}
-        m_Scale: {x: 2, y: 2}
+        m_Scale: {x: 3, y: 3}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
         m_Texture: {fileID: 2800000, guid: be6d21014d90c2c4cadebd1fd6f58024, type: 3}
@@ -44,5 +44,5 @@ Material:
     m_Colors:
     - _Color: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
     - _LineColor: {r: 0, g: 0.83798695, b: 1, a: 1}
-    - _Position: {r: 6.0299997, g: 1.81, b: -37.29, a: 0}
+    - _Position: {r: 6.23, g: 1.81, b: -37.31, a: 0}
   m_BuildTextureStacks: []

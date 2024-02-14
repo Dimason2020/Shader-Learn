@@ -26,10 +26,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ColorEnd: 0.916
+    - _ColorEnd: 1
     - _ColorStart: 0.094
-    - _WaveAmplitude: 0.417
+    - _WaveAmplitude: 0.45
     m_Colors:
-    - _ColorA: {r: 1, g: 1, b: 1, a: 1}
-    - _ColorB: {r: 0, g: 0, b: 0, a: 1}
+    - _ColorA: {r: 0, g: 1, b: 0.88953495, a: 1}
+    - _ColorB: {r: 0.039871804, g: 0.5584372, b: 0.6603774, a: 1}
   m_BuildTextureStacks: []

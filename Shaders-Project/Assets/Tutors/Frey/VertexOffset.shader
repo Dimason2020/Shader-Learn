@@ -63,8 +63,6 @@ Shader "Unlit/VertexOffset"
             v2f vert (appdata v)
             {
                 v2f o;
-                //float waves = cos((v.uv.y - _Time.y * 0.1) * TAU * 5);
-                //v.vertex.y = waves * _WaveAmplitude;
                 v.vertex.y = GetWave(v.uv) * _WaveAmplitude;
                 o.vertex = UnityObjectToClipPos(v.vertex);
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
@@ -77,11 +75,10 @@ Shader "Unlit/VertexOffset"
                 return (t-a)/(b-a);
             }
 
-            
-
             fixed4 frag (v2f i) : SV_Target
             { 
-                return GetWave(i.uv);
+                float4 color = lerp(_ColorB, _ColorA, GetWave(i.uv));
+                return color;
             }
             ENDCG
         }
