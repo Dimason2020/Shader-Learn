@@ -1,7 +1,7 @@
 ﻿Shader "Custom/Water" {
     Properties {
       _MainTex("Diffuse", 2D) = "white" {}
-      _Tint("Colour Tint", Color) = (1,1,1,1)
+      _Alpha("Colour Alpha", Range(0, 1)) = 0.5
       _Freq("Frequency", Range(0,5)) = 3
       _Speed("Speed",Range(0,100)) = 10
       _Amp("Amplitude",Range(0,1)) = 0.5
@@ -9,17 +9,17 @@
     }
     SubShader 
     {
-          Blend SrcAlpha OneMinusDstColor
+          Blend SrcAlpha OneMinusSrcAlpha
 
           CGPROGRAM
-          #pragma surface surf Lambert vertex:vert 
+          #pragma surface surf Lambert vertex:vert alpha:fade
       
           struct Input {
               float2 uv_MainTex;
               float3 vertColor;
           };
       
-          float4 _Tint;
+          float _Alpha;
           float _Freq;
           float _Speed;
           float _Amp;
@@ -48,6 +48,7 @@
               float2 timeUV = float2(IN.uv_MainTex.x + _Time.x, IN.uv_MainTex.y + _Time.x);
               float4 c = tex2D(_MainTex, timeUV);
               o.Albedo = c * IN.vertColor.rgb;
+              o.Alpha = _Alpha;
           }
           ENDCG
 

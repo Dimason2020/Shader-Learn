@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TowerBuildEffect 1
-  m_Shader: {fileID: 4800000, guid: e037037dd341eee4bb174def19e307e7, type: 3}
+  m_Name: SimpleWater
+  m_Shader: {fileID: 4800000, guid: 19d0d4e0c50c2c748afc707744dbe25d, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
@@ -21,22 +21,19 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 792cf41bbbde02b4e92fbfba1b6c9445, type: 3}
+        m_Texture: {fileID: 2800000, guid: d149f4b0f0a25fa41b1eca641bda9618, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NoiseTex:
-        m_Texture: {fileID: 2800000, guid: 4c7305f5b6ebf0448b13297757092b67, type: 3}
-        m_Scale: {x: 50, y: 50}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BuildSize: 0.731
-    - _BuildSizeMultiplier: 0.23
-    - _FoamWidth: 0.017
-    - _NoiseCutoff: 0.15
-    - _RimPower: 1
-    - _ShineMultiplier: 2.5
+    - _Amount: 0.511
+    - _Foam: 0.5
+    - _Height: 0.069
+    - _Speed: 1
     m_Colors:
-    - _FoamColor: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 0.8039216}
-    - _RimColor: {r: 0, g: 1, b: 1, a: 0}
+    - _Tint: {r: 1, g: 1, b: 1, a: 0.38431373}
   m_BuildTextureStacks: []
