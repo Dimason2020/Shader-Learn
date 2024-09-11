@@ -10,6 +10,7 @@
     SubShader 
     {
           Blend SrcAlpha OneMinusSrcAlpha
+          Tags {"Queue"="Transparent"}
 
           CGPROGRAM
           #pragma surface surf Lambert vertex:vert alpha:fade

@@ -43,6 +43,6 @@ Material:
     - _Radius: 2.61
     m_Colors:
     - _Color: {r: 0.103773594, g: 0.103773594, b: 0.103773594, a: 1}
-    - _LineColor: {r: 0, g: 0.83798695, b: 1, a: 1}
-    - _Position: {r: 6.23, g: 1.81, b: -37.31, a: 0}
+    - _LineColor: {r: 0.8320929, g: 1, b: 0, a: 1}
+    - _Position: {r: 92.009995, g: 1.81, b: -25.280003, a: 0}
   m_BuildTextureStacks: []

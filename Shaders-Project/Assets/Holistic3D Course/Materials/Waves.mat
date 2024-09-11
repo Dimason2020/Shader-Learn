@@ -27,7 +27,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Add: 1
-    - _Alpha: 0.683
+    - _Alpha: 0.655
     - _Amp: 0.118
     - _Freq: 0.29
     - _Mul: 0.703

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SpritesSwap 3
+  m_Shader: {fileID: 4800000, guid: 34fe01fb45ebc0348817598d825b31b1, type: 3}
+  m_ValidKeywords:
+  - GRADIENTHOR
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex2:
+        m_Texture: {fileID: 2800000, guid: a22e4b6c4fe9242aea74ea03dc066589, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Noise:
+        m_Texture: {fileID: 2800000, guid: be6d21014d90c2c4cadebd1fd6f58024, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Brightness: 0.08
+    - _ColorMask: 15
+    - _DISSOLVE: 0
+    - _Edgewidth: 0.074
+    - _FLIPX: 0
+    - _FLIPY: 0
+    - _FlipTransition: 1
+    - _GRADIENTHOR: 1
+    - _GRADIENTVERT: 0
+    - _NoiseStrength: 0.3
+    - _Offset: 8
+    - _Samples: 100
+    - _Shininess: 0.08
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _Transition: 1.305
+    - _XOffset: 8
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeCol: {r: 0.8301887, g: 0.012931686, b: 0, a: 1}
+  m_BuildTextureStacks: []
