@@ -26,8 +26,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Avalue: 0.05
-    - _Bvalue: 0.85
-    - _Xvalue: 0.076
+    - _Avalue: 0.2
+    - _Bvalue: 0.9
+    - _Xvalue: 0.346
     m_Colors: []
   m_BuildTextureStacks: []

@@ -30,8 +30,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _BuildSize: 0
-    - _BuildSizeMultiplier: 0.24
+    - _BuildSize: 1
+    - _BuildSizeMultiplier: 0.13
     - _FoamWidth: 0.024
     - _NoiseCutoff: 0.15
     - _RimPower: 1
