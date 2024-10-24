@@ -23,4 +23,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/DrawTutor/Draw.unity
     guid: c739bafa3e4e52e44985f147dd6352a7
+  - enabled: 1
+    path: Assets/Tutors/Scenes/Triplanar Study.unity
+    guid: ab27040c503fac9409599aaa300bf2ec
+  - enabled: 1
+    path: Assets/Tutors/Scenes/Waterfall.unity
+    guid: 02ce15b12a3138e4193db3c623b152f3
   m_configObjects: {}
