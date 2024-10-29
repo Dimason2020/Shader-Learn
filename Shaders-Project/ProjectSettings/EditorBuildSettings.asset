@@ -6,14 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Toon Water.unity
-    guid: f8d23ecabaa135f4cb12fb0061cca2f3
+    path: Assets/Scenes/UnityShaderBible.unity
+    guid: 8edd90bd8bacbae40acd00d8c1bfebd9
+  - enabled: 1
+    path: Assets/Scenes/FreyLearn Scene.unity
+    guid: 6d43552ba1bbee34093bafed07038fec
+  - enabled: 1
+    path: Assets/Scenes/Liquid Potions.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/Snow.unity
     guid: 446db33b2133c1848b6c9b2537ca6364
   - enabled: 1
-    path: Assets/Scenes/FreyLearn Scene.unity
-    guid: 6d43552ba1bbee34093bafed07038fec
+    path: Assets/Scenes/Toon Water.unity
+    guid: f8d23ecabaa135f4cb12fb0061cca2f3
   - enabled: 1
     path: Assets/Scenes/Triplanar.unity
     guid: ab27040c503fac9409599aaa300bf2ec
