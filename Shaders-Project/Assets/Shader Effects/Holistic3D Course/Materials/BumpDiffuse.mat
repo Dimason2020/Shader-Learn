@@ -35,7 +35,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Brightness: 1
-    - _BumpMultiply: 1
-    - _TextureBumpScale: 4
+    - _BumpMultiply: 0.95
+    - _TextureBumpScale: 1
     m_Colors: []
   m_BuildTextureStacks: []
