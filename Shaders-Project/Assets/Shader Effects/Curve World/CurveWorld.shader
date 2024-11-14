@@ -3,8 +3,8 @@ Shader "Unlit/CurveWorld"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _CurveAmountX("Curve Amount X", Range(-0.001, 0.001)) = 0
-        _CurveAmountY("Curve Amount Y", Range(-0.001, 0.001)) = 0
+        _CurveAmountX("Curve Amount X", Range(-0.01, 0.01)) = 0
+        _CurveAmountY("Curve Amount Y", Range(-0.01, 0.01)) = 0
     }
     SubShader
     {
