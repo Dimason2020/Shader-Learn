@@ -3,9 +3,8 @@ Shader "Unlit/CurveWorld"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _Color("Color", Color) = (1,1,1,1)
         _CurveAmountX("Curve Amount X", Range(-0.001, 0.001)) = 0
-        _CurveAmountY("Curve Amount Y", Range(0, 0.001)) = 0
+        _CurveAmountY("Curve Amount Y", Range(-0.001, 0.001)) = 0
     }
     SubShader
     {
@@ -36,7 +35,6 @@ Shader "Unlit/CurveWorld"
 
             sampler2D _MainTex;
             float4 _MainTex_ST;
-            float4 _Color;
             float _CurveAmountX;
             float _CurveAmountY;
 
@@ -46,12 +44,9 @@ Shader "Unlit/CurveWorld"
                 o.uv = TRANSFORM_TEX(v.uv, _MainTex);
                 o.worldPos = mul(unity_ObjectToWorld, v.vertex);
                 float3 dist = o.worldPos - _WorldSpaceCameraPos.xyz;
-                float3 p = v.vertex.xyz;
-                p.x = _CurveAmountX * pow(dist.z, 2);
-                //p.y = (-1 * _CurveAmountY) * pow(dist.z, 2);
-                v.vertex.xyz = p;
+                float3 result = float3(_CurveAmountX, _CurveAmountY, 0) * pow(dist.z, 2);
+                v.vertex.xyz += result;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.worldNormal = normalize(UnityObjectToWorldNormal(v.normal));
                 return o;
             }
 
@@ -59,7 +54,7 @@ Shader "Unlit/CurveWorld"
             fixed4 frag (v2f i) : SV_Target
             {
                 fixed4 col = tex2D(_MainTex, i.uv);
-                return col * _Color;
+                return col;
             }
             ENDCG
         }
